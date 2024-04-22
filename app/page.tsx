@@ -1,24 +1,14 @@
 "use client";
 
-import Button from "@/components/Button";
-import Container from "@/components/Container";
 import Input from "@/components/Input";
-import React from "react";
+import React, { useRef } from "react";
 
-export default function page() {
+export default function Home() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
   return (
     <main>
-      <Input id="name" label="Your name:" type="text" />
-      <Input id="age" label="Your age:" type="number" />
-      <p>
-        <Container
-          as={Button}
-          el="button"
-          onClick={() => console.log("CLICKED!")}
-        >
-          Click Me
-        </Container>
-      </p>
+      <Input id="name" label="Your name:" type="text" ref={inputRef} />
     </main>
   );
 }
